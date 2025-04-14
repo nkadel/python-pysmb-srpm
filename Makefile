@@ -5,10 +5,11 @@
 # Assure that sorting is case sensitive
 LANG=C
 
-MOCKS+=centos-stream+epel-8-x86_64
+#MOCKS+=centos-stream+epel-8-x86_64
 MOCKS+=centos-stream+epel-9-x86_64
+MOCKS+=centos-stream+epel-10-x86_64
 MOCKS+=fedora-41-x86_64
-MOCKS+=amazonlinux-2023-x86_64
+#MOCKS+=amazonlinux-2023-x86_64
 
 REPOBASEDIR:=`/bin/pwd`/repo
 
@@ -59,6 +60,7 @@ install:: $(MOCKS)
 		*-amz2023-x86_64) yumrelease=amazon/2023; yumarch=x86_64; ;; \
 		*-8-x86_64) yumrelease=el/8; yumarch=x86_64; ;; \
 		*-9-x86_64) yumrelease=el/9; yumarch=x86_64; ;; \
+		*-10-x86_64) yumrelease=el/10; yumarch=x86_64; ;; \
 		*-41-x86_64) yumrelease=fedora/41; yumarch=x86_64; ;; \
 		*-f41-x86_64) yumrelease=fedora/41; yumarch=x86_64; ;; \
 		*-rawhide-x86_64) yumrelease=fedora/rawhide; yumarch=x86_64; ;; \

@@ -1,11 +1,3 @@
-# Force python38 for RHEL 8, which has python 3.6 by default
-%if 0%{?el8} || 0%{?el9}
-%global python3_version 3.12
-%global python3_pkgversion 3.12
-# For RHEL 'platform python' insanity: Simply put, no.
-%global __python3 %{_bindir}/python%{python3_version}
-%endif
-
 # Created by pyp2rpm-3.3.10
 %global pypi_name pysmb
 %global pypi_version 1.2.11
@@ -21,9 +13,11 @@ Source0:        %{pypi_source %{pypi_name} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python%{python3_pkgversion}-setuptools
+BuildRequires:  python%{python3_pkgversion}-wheel
 BuildRequires:  python3dist(pyasn1)
-BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(tqdm)
+BuildRequires:  python3dist(pep517)
 
 %description
 pysmb is an experimental SMB/CIFS library written in Python. It implements the
