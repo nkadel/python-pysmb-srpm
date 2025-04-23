@@ -3,9 +3,6 @@ python-pysmb-srpm
 
 Wrapper for SRPM building tools for python-pysmb.
 
-Pre-install ansible-packaging for mock compilation
---------------------------------------------------
-
 ' make getsrc' relies on macros from
 
 
